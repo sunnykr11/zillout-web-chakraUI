@@ -10,6 +10,10 @@ import {
 } from "@chakra-ui/react"
 import purpleBg from "../assets/purpleBg.png"
 import pinkBg from "../assets/pinkBg.png"
+import location from "../assets/location.svg"
+import rectangle from "../assets/rectangle.svg"
+import person from "../assets/person.svg"
+import tag from "../assets/Tag.svg"
 
 
 interface PubDetails {
@@ -111,17 +115,42 @@ const Home = () => {
                 bgColor={"#1E1E1E"}
                 width={"90%"}
                 position={"absolute"}
-                top={210}
+                top={220}
                 >
                     <Flex
                     justify={'space-between'}
                     >
-                        <p>{data?.pubDetails?.type}</p>
-                        <p>{data?.pubDetails?.rating}</p>
+                        <Text
+                        textTransform="uppercase"
+                        letterSpacing="2px"
+                        fontSize={"12px"}
+                        fontWeight={"700"}
+                        color={"#9D9D9D"}
+                        >{data?.pubDetails?.type}</Text>
+                        <img
+                        src={rectangle} alt="" />
+                        <Text
+                        fontSize={"12px"}
+                        position={"absolute"}
+                        marginLeft={"82%"}
+                        marginTop={"3px"}
+                        color={"black"}
+                        fontWeight={"600"}
+                        >{data?.pubDetails?.rating}
+                        </Text>
                     </Flex>
-                        <h1>{data?.pubDetails?.name}</h1>
-                        <Flex>
-                            <p>{data?.pubDetails?.shortAddress}</p>
+                        <Text
+                        letterSpacing="2px"
+                        fontWeight={"700"}
+                        fontSize={"20px"}
+                        >{data?.pubDetails?.name}</Text>
+                        <Flex
+                        gap={"10px"}
+                        >
+                            <img src={location} alt="" />
+                            <Text
+                            color={"#9D9D9D"}
+                            >{data?.pubDetails?.shortAddress}</Text>
                         </Flex>
                 </Card>
             </Flex>
@@ -143,7 +172,7 @@ const Home = () => {
                     fontSize={"18px"}
                     fontWeight={600}
                     color={"#EBBB79"}
-                    marginTop={2}
+                    marginTop={3}
                     marginBottom={2}
                     >Event Offers
                     </Text>
@@ -188,7 +217,7 @@ const Home = () => {
                             fontWeight={"600"}
                             color={"#EBBB79"}
                             fontSize={"18px"}
-                            marginTop={2}
+                            marginTop={3}
                             marginBottom={2}
                             >Day Offers
                             </Text>
